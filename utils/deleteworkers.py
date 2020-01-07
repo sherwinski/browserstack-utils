@@ -13,3 +13,4 @@ def delete_workers(filename):
     for job in all_workers:
         res = session.delete(f"https://api.browserstack.com/5/worker/{job['id']}")
         n = os.write(sys.stdout.fileno(), res.content)
+        os.write(sys.stdout.fileno(), b'\n')

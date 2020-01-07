@@ -7,7 +7,7 @@ import time
 def fetch_workers():
     session = requests.Session()
     session.auth = (USERNAME, ACCESS_KEY)
-    res = session.get(f"https://api.browserstack.com/5/workers")
+    res = session.get("https://api.browserstack.com/5/workers")
     n = os.write(sys.stdout.fileno(), res.content)
     print("\n")
 
